@@ -5,7 +5,7 @@ Or update the baseUrl in cypress.config.js to the deployed juice shop url.
 ### Deployed Juice Shop URL
 https://demo.owasp-juice.shop/#/
 
-Cypress is like WebDriverIO, but it is more user friendly and easier to use.
+Cypress is like WebDriverIO, but it is more user-friendly and easier to use.
 
 ## Installation
 1. Download the project
@@ -15,7 +15,7 @@ npm install
 ```
 
 ## Usage
-1. Run "npx cypress open" to open the cypress test runner
+1. Run 'npx cypress open' to open the cypress test runner
 ```bash
 npx cypress open
 ```

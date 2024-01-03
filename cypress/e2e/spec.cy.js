@@ -22,12 +22,28 @@ describe("Forgot Password", () => {
         Pages.registerPage.registerButton.click();
     })
 
-    it("Login with new user", () => {
+    it("Login with new user and logout", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
         Pages.loginPage.emailInput.type(userData.email);
         Pages.loginPage.passwordInput.type(userData.password);
         Pages.loginPage.submitButton.click();
         Pages.basePage.accountButton.should("be.visible");
+        Pages.basePage.accountButton.click();
+        Pages.basePage.logoutButton.click();
+    })
+
+    it("Forgot password", () => {
+        Pages.basePage.accountButton.click();
+        Pages.basePage.loginButton.click();
+        Pages.loginPage.forgotPasswordLink.click({force: true});
+        Pages.forgotPasswordPage.emailInput.type(userData.email);
+        Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled");
+        Pages.forgotPasswordPage.securityQuestionInput.type(userData.word);
+        Pages.forgotPasswordPage.passwordInput.type(userData.newPassword)
+        Pages.forgotPasswordPage.repeatPasswordInput.type(userData.newPassword)
+        Pages.forgotPasswordPage.submitButton.click();
+        Pages.forgotPasswordPage.conformationMessage.should("be.visible");
+        Pages.forgotPasswordPage.conformationMessage.should("have.text", " Your password was successfully changed. ");
     })
 })
