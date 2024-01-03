@@ -1,4 +1,12 @@
-This project is the recreation of WebDriverIO recreation using cypress.
+This project is the recreation of WebDriverIO created using cypress.
+User will also need to install juice shop locally to run the tests.
+Or update the baseUrl in cypress.config.js to the deployed juice shop url.
+
+### Deployed Juice Shop URL
+https://demo.owasp-juice.shop/#/
+
+Cypress is like WebDriverIO, but it is more user friendly and easier to use.
+
 ## Installation
 1. Download the project
 2. Run `npm install` to install all the dependencies
