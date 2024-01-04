@@ -33,6 +33,7 @@ describe("Shopping", () => {
         Pages.basePage.searchInput.type("Apple Juice {enter}");
         Pages.productPage.products.should("have.attr", "cols", "4");
         Pages.productPage.addToBasketButton.click();
+        Pages.productPage.basketQuantity.should("have.text", "1");
         Pages.productPage.basketButton.click();
         Pages.basketPage.checkoutButton.click();
         Pages.addressPage.addNewAddressButton.click();

@@ -22,6 +22,10 @@ class ProductPage extends BasePage{
         return cy.get('button[routerlink="/basket"]')
     }
 
+    get basketQuantity(){
+        return cy.get('span.fa-layers-counter')
+    }
+
 }
 
 export default ProductPage;

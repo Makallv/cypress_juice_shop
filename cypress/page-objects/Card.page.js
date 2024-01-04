@@ -27,7 +27,7 @@ class CardPage extends BasePage {
     }
 
     get savedCard() {
-        return cy.get('*.mat-radio-inner-circle')
+        return cy.get('*.mat-radio-outer-circle')
     }
 
     get proceedButton() {
