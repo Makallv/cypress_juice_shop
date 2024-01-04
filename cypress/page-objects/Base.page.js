@@ -22,6 +22,14 @@ class BasePage{
     get closeWelcomeBanner(){
         return cy.get("[aria-label='Close Welcome Banner']")
     }
+
+    get searchButton(){
+        return cy.get(".mat-icon[role='img'].mat-ripple.mat-search_icon-search")
+    }
+
+    get searchInput(){
+        return cy.get('input[aria-required="false"]')
+    }
 }
 
 export default BasePage
