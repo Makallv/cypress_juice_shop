@@ -1,6 +1,8 @@
 import Pages from "../support/pages";
 import {userData} from "../support/userData";
+import {faker} from "@faker-js/faker";
 
+const email = faker.internet.email();
 describe("Forgot Password", () => {
     beforeEach(() => {
       Pages.basePage.visit();
@@ -13,7 +15,7 @@ describe("Forgot Password", () => {
         Pages.loginPage.emailInput.should("be.visible");
         Pages.loginPage.passwordInput.should("be.visible");
         Pages.loginPage.registerLink.click();
-        Pages.registerPage.emailInput.type(userData.email);
+        Pages.registerPage.emailInput.type(email);
         Pages.registerPage.passwordInput.type(userData.password);
         Pages.registerPage.repeatPasswordInput.type(userData.password);
         Pages.registerPage.securityQuestionInput.click()
@@ -25,7 +27,7 @@ describe("Forgot Password", () => {
     it("Login with new user and logout", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
-        Pages.loginPage.emailInput.type(userData.email);
+        Pages.loginPage.emailInput.type(email);
         Pages.loginPage.passwordInput.type(userData.password);
         Pages.loginPage.submitButton.click();
         Pages.basePage.accountButton.should("be.visible");
@@ -37,7 +39,7 @@ describe("Forgot Password", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
         Pages.loginPage.forgotPasswordLink.click({force: true});
-        Pages.forgotPasswordPage.emailInput.type(userData.email);
+        Pages.forgotPasswordPage.emailInput.type(email);
         Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled").type(userData.word);
         Pages.forgotPasswordPage.passwordInput.type(userData.newPassword)
         Pages.forgotPasswordPage.repeatPasswordInput.type(userData.newPassword)
