@@ -57,5 +57,7 @@ describe("Shopping", () => {
         Pages.cardPage.saveButton.click();
         Pages.cardPage.savedCard.click({force: true});
         Pages.cardPage.proceedButton.click();
+        Pages.reviewPage.checkoutButton.click();
+        Pages.reviewPage.confirmationText.should("be.visible").should("have.text", "Thank you for your purchase!");
     });
 })

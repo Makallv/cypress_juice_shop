@@ -7,6 +7,7 @@ import BasketPage from '../page-objects/Basket.page'
 import AddressPage from '../page-objects/Address.page'
 import CardPage from '../page-objects/Card.page'
 import DeliveryPage from "../page-objects/Delivery.page";
+import ReviewPage from "../page-objects/Review.page";
 
 export class Pages {
     constructor() {
@@ -19,6 +20,7 @@ export class Pages {
         this.addressPage = new AddressPage()
         this.cardPage = new CardPage()
         this.deliveryPage = new DeliveryPage()
+        this.reviewPage = new ReviewPage()
     }
 }
 
