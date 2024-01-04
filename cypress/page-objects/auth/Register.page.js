@@ -27,7 +27,7 @@ class RegisterPage extends BasePage {
     }
 
     get securityQuestionOptions(){
-        return cy.get("mat-option.mat-option")
+        return cy.get("mat-option")
     }
 
     get securityAnswerInput(){
