@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
 
-    baseUrl: "http://localhost:3000/#/",
+    baseUrl: "https://demo.owasp-juice.shop/#/",
     viewportHeight: 1080,
     viewportWidth: 1920,
   },
