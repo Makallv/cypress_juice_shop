@@ -21,3 +21,7 @@ npx cypress open
 ```
 2. Open test browser and open `password.cy.js` file
 3. Let the test run
+4. Or you can run `npx cypress run` to run the test in headless mode
+```bash
+npx cypress run
+```
