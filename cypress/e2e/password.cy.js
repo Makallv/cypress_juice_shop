@@ -37,8 +37,8 @@ describe("Forgot Password", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
         Pages.loginPage.forgotPasswordLink.click({force: true});
-        Pages.forgotPasswordPage.emailInput.type(userData.email);
-        Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled").type(userData.word);
+        Pages.forgotPasswordPage.emailInput.type("marks@user.com");
+        Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled").type("ppp");
         Pages.forgotPasswordPage.passwordInput.type(userData.newPassword)
         Pages.forgotPasswordPage.repeatPasswordInput.type(userData.newPassword)
         Pages.forgotPasswordPage.submitButton.click();

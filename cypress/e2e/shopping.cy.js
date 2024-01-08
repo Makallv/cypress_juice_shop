@@ -32,7 +32,7 @@ describe("Shopping", () => {
         Pages.basePage.searchButton.should("have.attr", "aria-hidden", "true").click();
         Pages.basePage.searchInput.type("Apple Juice {enter}");
         Pages.productPage.products.should("have.attr", "cols", "4");
-        Pages.productPage.addToBasketButton.click();
+        Pages.productPage.addToBasketButton.eq(0).click();
         Pages.productPage.basketQuantity.should("have.text", "1");
         Pages.productPage.basketButton.click();
         Pages.basketPage.checkoutButton.click();
