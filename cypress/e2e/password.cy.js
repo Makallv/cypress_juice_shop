@@ -1,5 +1,5 @@
 import Pages from "../support/pages";
-import {userData} from "../support/userData";
+const {userData} = require("../support/userData");
 
 describe("Forgot Password", () => {
     beforeEach(() => {
@@ -37,12 +37,11 @@ describe("Forgot Password", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
         Pages.loginPage.forgotPasswordLink.click({force: true});
-        Pages.forgotPasswordPage.emailInput.type("marks@user.com");
-        Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled").type("ppp");
+        Pages.forgotPasswordPage.emailInput.type(userData.email);
+        Pages.forgotPasswordPage.securityQuestionInput.should("be.enabled").type(userData.word);
         Pages.forgotPasswordPage.passwordInput.type(userData.newPassword)
         Pages.forgotPasswordPage.repeatPasswordInput.type(userData.newPassword)
         Pages.forgotPasswordPage.submitButton.click();
-        Pages.forgotPasswordPage.conformationMessage.should("be.visible");
-        Pages.forgotPasswordPage.conformationMessage.should("have.text", " Your password was successfully changed. ");
+        Pages.forgotPasswordPage.conformationMessage.should("be.visible").should("have.text", " Your password was successfully changed. ");
     })
 })

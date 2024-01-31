@@ -6,7 +6,7 @@ module.exports = defineConfig({
 
     },
 
-    baseUrl: "https://demo.owasp-juice.shop/#/",
+    baseUrl: "http://localhost:3000/#/",
     viewportHeight: 1080,
     viewportWidth: 1920,
     defaultCommandTimeout: 10000,
