@@ -26,9 +26,7 @@ describe("Shopping", () => {
     it('Checkout', () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
-        Pages.loginPage.emailInput.type(userData.email);
-        Pages.loginPage.passwordInput.type(userData.password);
-        Pages.loginPage.submitButton.click();
+        cy.loginToJuice(userData.email, userData.password)
         Pages.basePage.searchButton.should("have.attr", "aria-hidden", "true").click();
         Pages.basePage.searchInput.type("Apple Juice {enter}");
         Pages.productPage.products.should("have.attr", "cols", "4");

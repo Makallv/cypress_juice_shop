@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import Pages from "../support/pages";
+
+Cypress.Commands.add('loginToJuice', (email, password) => {
+    Pages.loginPage.emailInput.type(email)
+    Pages.loginPage.passwordInput.type(password)
+    Pages.loginPage.submitButton.click()
+})

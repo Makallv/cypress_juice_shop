@@ -25,9 +25,7 @@ describe("Forgot Password", () => {
     it("Login with new user and logout", () => {
         Pages.basePage.accountButton.click();
         Pages.basePage.loginButton.click();
-        Pages.loginPage.emailInput.type(userData.email);
-        Pages.loginPage.passwordInput.type(userData.password);
-        Pages.loginPage.submitButton.click();
+        cy.loginToJuice(userData.email, userData.password)
         Pages.basePage.accountButton.should("be.visible");
         Pages.basePage.accountButton.click();
         Pages.basePage.logoutButton.click();
